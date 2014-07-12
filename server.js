@@ -9,11 +9,13 @@ var router = express.Router(); 				// get an instance of the express Router
 
 
 //show the index.html on root
-router.get('/', function(req, res) {
+router.get('/api', function(req, res) {
 	res.json({ message: 'hooray! welcome to our api!' });	
 });
 
-
+app.get('/', function(req,res){
+ res.sendfile(__dirname + '/public/home.html');
+}); 
 
 //register the routers
 app.use('/', router);
