@@ -24,6 +24,11 @@
 		<input type='text' ng-model='nicNumInput' />
 		{{nicNumInput}}
 
+		<div ng-repeat="(name,data) in nicData">
+						<p> {{name}} : {{data}}</p>
+
+		</div>
+
 		<!-- submit button -->
 		<button type="submit" class="btn btn-primary btn-lg" ng-click="getInfo()">Send</button>
 
