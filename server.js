@@ -22,12 +22,14 @@ router.get('/info', function(req, res) {
 
 //show the index.html on root
 router.get('/', function(req,res){
- res.sendfile(__dirname + '/public/home.html');
+	res.sendfile(__dirname + '/public/home.html');
 }); 
 
 //register the router 
 app.use('/', router);
 
+app.use(express.static(__dirname + '/public')); 		// set the static files location /public/img will be /img for users
+
 app.listen(port, server_ip_address, function () {
-  console.log( "Listening on " + server_ip_address + ", server_port " + port )
+	console.log( "Listening on " + server_ip_address + ", server_port " + port )
 });
