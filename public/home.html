@@ -45,25 +45,26 @@
 			<li class="twitter"><a href="#"></a></li>
 			<li class="facebook"><a href="#"></a></li>
 		</ul>
-		<hr ng-show="nicData.number">
+		<hr ng-show="nicData.number || nicData.error">
 		<div style="padding-top:1em"></div>
 
-		<div ng-show="nicData.gender" >
+		<div ng-hide="nicData.error">
+		<div ng-show="nicData.gender"  >
 						<p> <strong>Gender :</strong> {{nicData.gender}}</p>
 
 		</div>
 
-		<div ng-show="nicData.birthYear" >
+		<div ng-show="nicData.birthYear">
 						<p> <strong>Birthday :</strong> {{nicData.birthYear}} - {{nicData.birthMonth}} - {{nicData.birthDate}} (A {{nicData.birthDay}}!)</p>
 
 		</div>
 
-		<div ng-show="nicData.age" >
+		<div ng-show="nicData.age">
 						<p> <strong>Age :</strong> {{nicData.age  | date:'yy - MM - dd'}}</p>
 
 		</div>
 
-		<div ng-show="nicData.votingPower" >
+		<div ng-show="nicData.votingPower">
 						<p> <strong>Voting Power :</strong> {{nicData.votingPower}}</p>
 
 		</div>
@@ -72,7 +73,12 @@
 						<p> <strong>Serial # :</strong> {{nicData.serialNumber}}</p>
 
 		</div>
-		
+	</div>
+
+		<div ng-show="nicData.error" ng-hide="nicData.number">
+						<p style="color: red"> <strong>{{nicData.error}}</strong></p>
+
+		</div>
 		
 	</div>
 </div>

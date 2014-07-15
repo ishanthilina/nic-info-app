@@ -20,10 +20,20 @@ app.controller("MainController", [ '$http', '$scope', function($http,$scope){
 				if($scope.nicData.birthDay ===5) $scope.nicData.birthDay="Friday";
 				if($scope.nicData.birthDay ===6) $scope.nicData.birthDay="Saturday";
 
+				//set voting power
+				if($scope.nicData.votingPower) {
+					$scope.nicData.votingPower="Yes";
+				}
+				else{
+					$scope.nicData.votingPower="No";
+				}
+
+
 				console.log(data);
 			})
 			.error(function(data) {
 				console.log('Error: ' + data);
+				$scope.nicData.error=data;
 			});
 	};
 
