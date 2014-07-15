@@ -107,7 +107,7 @@ var process=function process(number,res){
 
 
             //get day of week of the b'day
-            birthDay=fullBirthday.getDay();
+            birthDay=fullBirthday.getDay()-1;
 
             //get serial number
             serialNumber=parseInt(number.slice(5,8));

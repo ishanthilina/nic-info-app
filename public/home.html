@@ -45,10 +45,31 @@
 			<li class="twitter"><a href="#"></a></li>
 			<li class="facebook"><a href="#"></a></li>
 		</ul>
-		<hr>
-		<div ng-show="nicData.number.length" style="padding-top:1em"></div>
-		<div ng-repeat="(name,data) in nicData">
-						<p> {{name}} : {{data}}</p>
+		<hr ng-show="nicData.number">
+		<div style="padding-top:1em"></div>
+
+		<div ng-show="nicData.gender" >
+						<p> <strong>Gender :</strong> {{nicData.gender}}</p>
+
+		</div>
+
+		<div ng-show="nicData.birthYear" >
+						<p> <strong>Birthday :</strong> {{nicData.birthYear}} - {{nicData.birthMonth}} - {{nicData.birthDate}} (A {{nicData.birthDay}}!)</p>
+
+		</div>
+
+		<div ng-show="nicData.age" >
+						<p> <strong>Age :</strong> {{nicData.age  | date:'yy - MM - dd'}}</p>
+
+		</div>
+
+		<div ng-show="nicData.votingPower" >
+						<p> <strong>Voting Power :</strong> {{nicData.votingPower}}</p>
+
+		</div>
+
+		<div ng-show="nicData.serialNumber" >
+						<p> <strong>Serial # :</strong> {{nicData.serialNumber}}</p>
 
 		</div>
 		
