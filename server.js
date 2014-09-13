@@ -3,7 +3,7 @@ var processor=require('./processor');
 
 var app        = express(); 			
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080; 		// set our port
+var port = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8080; 		// set our port
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
 
@@ -30,6 +30,6 @@ app.use('/', router);
 
 app.use(express.static(__dirname + '/public')); 		// set the static files location /public/img will be /img for users
 
-app.listen(port, server_ip_address, function () {
+app.listen(port, function () {
 	console.log( "Listening on " + server_ip_address + ", server_port " + port )
 });
